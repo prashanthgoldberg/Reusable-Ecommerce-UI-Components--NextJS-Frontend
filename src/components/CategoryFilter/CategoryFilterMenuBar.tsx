@@ -45,7 +45,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
   // Strawberry icon for Flavors
   const flavorIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
-      <path d="M18.2086 8.16092L21.8544 4.51509M18.2086 8.16092V2.95259M18.2086 8.16092H23.4169M9.35439 10.7651H9.36481M13.5211 9.72342H13.5315M8.31272 14.9318H8.32314M12.4794 13.8901H12.4898M16.6461 12.8484H16.6565M7.27105 19.0984H7.28147M11.4377 18.0568H11.4481M15.6044 17.0151H15.6148M2.68772 18.6818C2.52797 19.3709 2.54629 20.0893 2.74097 20.7694C2.93564 21.4495 3.30026 22.0688 3.80047 22.569C4.30067 23.0692 4.91999 23.4338 5.60007 23.6285C6.28015 23.8232 6.9986 23.8415 7.68772 23.6818L17.0627 21.4943C18.2538 21.2425 19.3518 20.6655 20.2346 19.8272C21.1175 18.989 21.7506 17.9223 22.0636 16.7458C22.3766 15.5693 22.3572 14.3291 22.0077 13.163C21.6582 11.9968 20.9921 10.9504 20.0836 10.1401L16.1252 6.28592C15.2723 5.43942 14.2094 4.83517 13.0457 4.53524C11.882 4.2353 10.6594 4.25048 9.50355 4.57922C8.34767 4.90796 7.30011 5.53841 6.46842 6.40583C5.63673 7.27326 5.05089 8.34641 4.77105 9.51509L2.68772 18.6818Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M18.2086 8.16092L21.8544 4.51509M18.2086 8.16092V2.95259M18.2086 8.16092H23.4169M9.35439 10.7651H9.36481M13.5211 9.72342H13.5315M8.31272 14.9318H8.32314M12.4794 13.8901H12.4898M16.6461 12.8484H16.6565M7.27105 19.0984H7.28147M11.4377 18.0568H11.4481M15.6044 17.0151H15.6148M2.68772 18.6818C2.52797 19.3709 2.54629 20.0893 2.74097 20.7694C2.93564 21.4495 3.30026 22.0688 3.80047 22.569C4.30067 23.0692 4.91999 23.4338 5.60007 23.6285C6.28015 23.8232 6.9986 23.8415 7.68772 23.6818L17.0627 21.4943C18.2538 21.2425 19.3518 20.6655 20.2346 19.8272C21.1175 18.989 21.7506 17.9223 22.0636 16.7458C22.3766 15.5693 22.3572 14.3291 22.0077 13.163C21.6582 11.9968 20.9921 10.9504 20.0836 10.1401L16.1252 6.28592C15.2723 5.43942 14.2094 4.83517 13.0457 4.53524C11.882 4.2353 10.6594 4.25048 9.50355 4.57922C8.34767 4.90796 7.30011 5.53841 6.46842 6.40583C5.63673 7.27326 5.05089 8.34641 4.77105 9.51509L2.68772 18.6818Z" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
   // Static chart icon for Strength
@@ -62,34 +62,38 @@ export const CategoryFilterMenuBar: React.FC = () => {
 
   return (
     <div
-      className="flex justify-center items-center bg-[#E6FAFC] border-0 rounded-[20px] shadow-none px-4 py-6"
-      style={{ minWidth: 800, minHeight: 120 }}
+      className="flex flex-col sm:flex-row justify-center items-center bg-[#E6FAFC] border-0 rounded-[20px] shadow-none px-2 py-4 sm:px-4 sm:py-6 w-full max-w-2xl"
+      style={{ minWidth: 0, minHeight: 80 }}
     >
-      <FilterDropDown
-        title={filterData[0].title}
-        _icon={brandIcon}
-        options={filterData[0].options}
-        selected={selected[0]}
-        onChange={(values) => handleChange(0, values)}
-      />
-
-      <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
-      <FilterDropDown
-        title={filterData[1].title}
-        _icon={flavorIcon}
-        options={filterData[1].options}
-        selected={selected[1]}
-        onChange={(values) => handleChange(1, values)}
-      />
-
-      <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
-      <FilterDropDown
-        title={filterData[2].title}
-        _icon={strengthIcon}
-        options={filterData[2].options}
-        selected={selected[2]}
-        onChange={(values) => handleChange(2, values)}
-      />
+      <div className="flex flex-col sm:flex-row w-full max-w-2xl gap-2 sm:gap-0">
+        <FilterDropDown
+          title={filterData[0].title}
+          _icon={brandIcon}
+          options={filterData[0].options}
+          selected={selected[0]}
+          onChange={(values) => handleChange(0, values)}
+        />
+        <div className="hidden sm:flex items-center mx-2" style={{ height: 'auto' }}>
+          <div className="border-l border-[#E0E0E0]" style={{ height: '56px', width: 0, margin: '0 auto' }} />
+        </div>
+        <FilterDropDown
+          title={filterData[1].title}
+          _icon={flavorIcon}
+          options={filterData[1].options}
+          selected={selected[1]}
+          onChange={(values) => handleChange(1, values)}
+        />
+        <div className="hidden sm:flex items-center mx-2" style={{ height: 'auto' }}>
+          <div className="border-l border-[#E0E0E0]" style={{ height: '56px', width: 0, margin: '0 auto' }} />
+        </div>
+        <FilterDropDown
+          title={filterData[2].title}
+          _icon={strengthIcon}
+          options={filterData[2].options}
+          selected={selected[2]}
+          onChange={(values) => handleChange(2, values)}
+        />
+      </div>
     </div>
   );
 };

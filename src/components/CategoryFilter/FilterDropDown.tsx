@@ -33,10 +33,9 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
   };
 
   return (
-    <div className="relative" style={{ width: 255 }}>
+    <div className="relative w-full sm:w-[255px]">
       <button
-        className="flex flex-col items-start w-full px-5 py-3 bg-[#ffffff] border-0 rounded-[12px] shadow-none hover:bg-[#D2F3F7] focus:outline-none"
-        style={{ height: 72 }}
+        className="flex flex-col items-start w-full px-4 py-2 sm:px-5 sm:py-3 bg-[#ffffff] border-0 rounded-[12px] shadow-none hover:bg-[#D2F3F7] focus:outline-none min-h-[56px] sm:min-h-[72px]"
         onClick={() => setOpen((prev) => !prev)}
         type="button"
       >
@@ -45,10 +44,10 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
           {_icon}
           <span className="font-bold text-[18px] text-[#222] capitalize leading-[22px]">{title}</span>
         </span>
-        <span className="ml-8 text-[#A3A3A3] text-[16px] leading-[19px] font-normal flex items-center gap-1">
+        <span className="ml-8 sm:ml-8 text-[#A3A3A3] text-[15px] sm:text-[16px] leading-[19px] font-normal flex items-center gap-2">
           Choose
           <svg
-            className={`w-5 h-5 ml-10 transition-transform ${open ? "rotate-180" : ""}`}
+            className={`w-5 h-5 ml-4 sm:ml-10 transition-transform ${open ? "rotate-180" : ""}`}
             fill="none"
             stroke="#A3A3A3"
             strokeWidth="2"
@@ -61,7 +60,7 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
 
         {/* Dropdown menu */}
       {open && (
-        <div className="absolute left-0 z-10 w-full mt-2 bg-white border-0 rounded-[16px] shadow-[0_8px_40px_0_rgba(0,0,0,0.18)] max-h-[255px] overflow-y-auto py-2" style={{ minWidth: 216 }}>
+        <div className="absolute left-0 z-10 w-full mt-2 bg-white border-0 rounded-[16px] shadow-[0_8px_40px_0_rgba(0,0,0,0.18)] max-h-[255px] overflow-y-auto py-2 min-w-[180px] sm:min-w-[216px]">
           {options.map((option) => (
             <label
               key={option}
