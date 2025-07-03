@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 interface FilterDropDownProps {
   title: string;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   icon: React.ReactNode;
   options: string[];
   selected: string[];
