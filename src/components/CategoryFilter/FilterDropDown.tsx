@@ -5,8 +5,9 @@ import React, { useState } from "react";
 
 interface FilterDropDownProps {
   title: string;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  icon: React.ReactNode;
+// The icon prop is intentionally unused to preserve the component API for future use.
+// To satisfy ESLint, prefix with an underscore and make it optional:
+_icon?: React.ReactNode;
   options: string[];
   selected: string[];
   onChange: (selected: string[]) => void;
@@ -15,7 +16,7 @@ interface FilterDropDownProps {
 // The FilterDropDown component renders a dropdown menu with checkboxes for selecting options.
 export const FilterDropDown: React.FC<FilterDropDownProps> = ({
   title,
-  icon,
+  _icon,
   options,
   selected,
   onChange,

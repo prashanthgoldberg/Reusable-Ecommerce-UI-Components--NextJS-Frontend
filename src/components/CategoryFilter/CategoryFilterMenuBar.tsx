@@ -48,7 +48,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
     
       <FilterDropDown
         title={filterData[0].title}
-        icon={undefined}
+        _icon={undefined}
         options={filterData[0].options}
         selected={selected[0]}
         onChange={(values) => handleChange(0, values)}
@@ -57,7 +57,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
       <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
       <FilterDropDown
         title={filterData[1].title}
-        icon={undefined}
+        _icon={undefined}
         options={filterData[1].options}
         selected={selected[1]}
         onChange={(values) => handleChange(1, values)}
@@ -66,7 +66,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
       <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
       <FilterDropDown
         title={filterData[2].title}
-        icon={undefined}
+        _icon={undefined}
         options={filterData[2].options}
         selected={selected[2]}
         onChange={(values) => handleChange(2, values)}
