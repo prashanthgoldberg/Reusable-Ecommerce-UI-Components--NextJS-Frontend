@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import { FilterDropDown } from "./FilterDropDown";
 
+// Data for the filter dropdowns
 const filterData = [
   {
     title: "brands",
@@ -29,9 +31,11 @@ const filterData = [
   },
 ];
 
+// The CategoryFilterMenuBar component renders a menu bar with multiple filter dropdowns
 export const CategoryFilterMenuBar: React.FC = () => {
   const [selected, setSelected] = useState<string[][]>([[], [], []]);
 
+    // Handle change in selected values for each dropdown
   const handleChange = (idx: number, values: string[]) => {
     setSelected((prev) => prev.map((s, i) => (i === idx ? values : s)));
   };
@@ -41,6 +45,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
       className="flex justify-center items-center bg-[#E6FAFC] border-0 rounded-[20px] shadow-none px-4 py-6"
       style={{ minWidth: 800, minHeight: 120 }}
     >
+    
       <FilterDropDown
         title={filterData[0].title}
         icon={undefined}
@@ -48,6 +53,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
         selected={selected[0]}
         onChange={(values) => handleChange(0, values)}
       />
+
       <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
       <FilterDropDown
         title={filterData[1].title}
@@ -56,6 +62,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
         selected={selected[1]}
         onChange={(values) => handleChange(1, values)}
       />
+
       <div className="h-[56px] mx-2 border-l border-[#E0E0E0]" style={{ width: 0 }} />
       <FilterDropDown
         title={filterData[2].title}

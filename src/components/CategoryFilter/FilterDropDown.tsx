@@ -1,4 +1,6 @@
 "use client";
+
+// This file is a React component for a reusable filter dropdown menu.
 import React, { useState } from "react";
 
 interface FilterDropDownProps {
@@ -9,6 +11,7 @@ interface FilterDropDownProps {
   onChange: (selected: string[]) => void;
 }
 
+// The FilterDropDown component renders a dropdown menu with checkboxes for selecting options.
 export const FilterDropDown: React.FC<FilterDropDownProps> = ({
   title,
   icon,
@@ -18,6 +21,7 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
 
+    // Handle option selection
   const handleSelect = (option: string) => {
     if (selected.includes(option)) {
       onChange(selected.filter((item) => item !== option));
@@ -35,6 +39,7 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
         type="button"
       >
         <span className="flex items-center gap-2 mb-1">
+
           {/* Group/users icon */}
           <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
             <g stroke="#222" strokeWidth="1.5">
@@ -57,6 +62,8 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
           </svg>
         </span>
       </button>
+
+        {/* Dropdown menu */}
       {open && (
         <div className="absolute left-0 z-10 w-full mt-2 bg-white border-0 rounded-[16px] shadow-[0_8px_40px_0_rgba(0,0,0,0.18)] max-h-[255px] overflow-y-auto py-2" style={{ minWidth: 216 }}>
           {options.map((option) => (
@@ -87,6 +94,8 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
                   </svg>
                 )}
               </span>
+
+                {/* Option label */}
               <span className="ml-4 text-[#222] text-[18px] leading-[22px] font-normal">{option}</span>
             </label>
           ))}
