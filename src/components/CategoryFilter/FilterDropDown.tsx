@@ -41,18 +41,12 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
         type="button"
       >
         <span className="flex items-center gap-2 mb-1">
-
-          {/* Group/users icon */}
-          <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
-            <g stroke="#222" strokeWidth="1.5">
-              <circle cx="7.5" cy="8.5" r="3.25"/>
-              <path d="M13.5 8.5a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0Zm-10.5 8.25c0-2.071 2.686-3.25 5.5-3.25s5.5 1.179 5.5 3.25v.5a.75.75 0 0 1-.75.75h-9.5a.75.75 0 0 1-.75-.75v-.5Zm10.5 0c0-1.071 1.343-1.75 2.75-1.75s2.75.679 2.75 1.75v.5a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-.5Z"/>
-            </g>
-          </svg>
+          {/* Custom icon for each filter, passed from parent */}
+          {_icon}
           <span className="font-bold text-[18px] text-[#222] capitalize leading-[22px]">{title}</span>
         </span>
-        <span className="ml-7 text-[#A3A3A3] text-[16px] leading-[19px] font-normal flex items-center gap-1">
-          Choose Number
+        <span className="ml-8 text-[#A3A3A3] text-[16px] leading-[19px] font-normal flex items-center gap-1">
+          Choose
           <svg
             className={`w-5 h-5 ml-10 transition-transform ${open ? "rotate-180" : ""}`}
             fill="none"
