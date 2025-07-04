@@ -24,7 +24,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
 }) => {
   return (
     <div
-      className="relative w-full max-w-[48vw] sm:max-w-[248px] h-[180px] sm:h-[329px] rounded-[16px] overflow-hidden shadow-sm mx-auto flex-shrink"
+      className="relative w-full max-w-[48vw] sm:max-w-[248px] h-[240px] sm:h-[329px] rounded-[16px] overflow-hidden shadow-sm mx-auto flex-shrink"
       style={{
         background: "linear-gradient(180deg, #CEF6F8 0%, #F0F1F1 100%)",
         minWidth: 0,
@@ -43,7 +43,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
       </div>
 
       {/* Product image */}
-      <div className="absolute left-1/2 top-[40px] sm:top-[38px] -translate-x-1/2 w-[80px] h-[80px] sm:w-[219px] sm:h-[220px] flex items-center justify-center">
+      <div className="absolute left-1/2 top-[24px] sm:top-[38px] -translate-x-1/2 w-[80px] h-[80px] w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] flex items-center justify-center">
         <img
           src={productImage}
           alt={productName}
