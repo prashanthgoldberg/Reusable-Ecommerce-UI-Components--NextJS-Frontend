@@ -60,7 +60,7 @@ export const FilterDropDown: React.FC<FilterDropDownProps> = ({
 
         {/* Dropdown menu */}
       {open && (
-        <div className="absolute left-0 z-10 w-full mt-2 bg-white border-0 rounded-[16px] shadow-[0_8px_40px_0_rgba(0,0,0,0.18)] max-h-[255px] overflow-y-auto py-2 min-w-[180px] sm:min-w-[216px]">
+        <div className="absolute left-0 z-[100] w-full mt-2 bg-white border-0 rounded-[16px] shadow-[0_8px_40px_0_rgba(0,0,0,0.18)] max-h-[255px] overflow-y-auto py-2 min-w-[180px] sm:min-w-[216px]">
           {options.map((option) => (
             <label
               key={option}

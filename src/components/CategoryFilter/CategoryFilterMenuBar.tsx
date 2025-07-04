@@ -62,7 +62,7 @@ export const CategoryFilterMenuBar: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col sm:flex-row justify-center items-center bg-[#E6FAFC] border-0 rounded-[20px] shadow-none px-2 py-4 sm:px-4 sm:py-6 w-full max-w-2xl"
+      className="flex flex-col sm:flex-row justify-center items-center bg-[#E6FAFC] border-0 rounded-[20px] shadow-none px-2 py-4 sm:px-4 sm:py-6 w-full max-w-2xl mt-8"
       style={{ minWidth: 0, minHeight: 80 }}
     >
       <div className="flex flex-col sm:flex-row w-full max-w-2xl gap-2 sm:gap-0">
