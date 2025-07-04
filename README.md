@@ -2,7 +2,7 @@
 
 A comprehensive, production-ready collection of reusable UI components built with Next.js, TypeScript, and Tailwind CSS. This project focuses on delivering pixel-perfect, Figma-accurate UI elements—especially a versatile category filter menu bar—ideal, product card, pagination for e-commerce or similar category-driven platforms.
 
-**Live-Demo:** [https://freelance-qllp.vercel.app/](https://freelance-qllp.vercel.app/)
+- **Live-Demo:** [https://freelance-qllp.vercel.app/](https://freelance-qllp.vercel.app/)
 
 ---
 
