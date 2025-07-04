@@ -479,14 +479,6 @@ const products = [
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
   },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
   
   
 ];
@@ -495,10 +487,21 @@ export const ListProductCard: React.FC = () => {
   // 6 cards per page, 2 rows of 3
   const { page, setPage, totalPages, paginated } = useProductPagination(products, 6);
   return (
-    <div className="flex flex-col items-center w-full px-2 sm:px-0">
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center w-full max-w-5xl mt-8">
+    <div className="flex flex-col items-center w-full lg:px-2 sm:px-0">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4 sm:gap-x-4 sm:gap-y-6 justify-items-center w-full max-w-5xl mt-6 sm:px-2"
+      >
         {paginated.map((product, idx) => (
-          <SingleProductCard key={idx + (page - 1) * 6} {...product} />
+          <div
+            className="w-full flex justify-center"
+            key={idx + (page - 1) * 6}
+          >
+            <div
+              className="w-full flex justify-center"
+            >
+              <SingleProductCard {...product} />
+            </div>
+          </div>
         ))}
       </div>
       <div className="w-full flex justify-center mt-6">
