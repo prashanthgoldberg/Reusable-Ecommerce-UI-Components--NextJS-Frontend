@@ -35,12 +35,12 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
         {/* Sale badge (conditionally render) */}
         {saleLabel ? (
           <div className="bg-white rounded-[6px] w-[54px] h-[18px] flex items-center justify-center">
-            <span className="italic font-semibold text-[8px] sm:text-[10px] leading-[12px] text-[#C02929]">{saleLabel}</span>
+            <span className="italic font-semibold text-[10px] leading-[12px] text-[#C02929]">{saleLabel}</span>
           </div>
         ) : <div className="w-[54px] h-[18px]" />}
         {/* Free shipping badge */}
         <div className="bg-white rounded-[6px] w-[74px] h-[18px] flex items-center justify-center">
-          <span className="italic font-semibold text-[8px] sm:text-[10px] leading-[12px] text-black">{shippingLabel}</span>
+          <span className="italic font-semibold text-[10px] leading-[12px] text-black">{shippingLabel}</span>
         </div>
       </div>
 
