@@ -24,7 +24,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
 }) => {
   return (
     <div
-      className="relative w-full max-w-[48vw] sm:max-w-[248px] h-[240px] sm:h-[329px] rounded-[16px] overflow-hidden shadow-sm mx-auto flex-shrink"
+      className="relative w-full max-w-[48vw] sm:max-w-[248px] h-[240px] sm:h-[329px] rounded-[16px] overflow-hidden shadow-sm mx-auto flex-shrink hover:scale-[1.01] transition-transform duration-300 ease-in-out"
       style={{
         background: "linear-gradient(180deg, #CEF6F8 0%, #F0F1F1 100%)",
         minWidth: 0,
