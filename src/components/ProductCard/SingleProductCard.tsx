@@ -6,9 +6,9 @@ import React from "react";
 interface SingleProductCardProps {
   productImage: string;
   productName: string;
-  salePrice: string;
+  salePrice?: string;
   originalPrice: string;
-  saleLabel: string;
+  saleLabel?: string;
   shippingLabel: string;
   onAddToBasket?: () => void;
 }
@@ -32,10 +32,12 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
     >
       {/* Top badges */}
       <div className="absolute flex flex-row w-full justify-between top-[8px] left-0 px-2 z-0">
-        {/* Sale badge */}
-        <div className="bg-white rounded-[6px] w-[54px] h-[18px] flex items-center justify-center">
-          <span className="italic font-semibold text-[8px] sm:text-[10px] leading-[12px] text-[#C02929]">{saleLabel}</span>
-        </div>
+        {/* Sale badge (conditionally render) */}
+        {saleLabel ? (
+          <div className="bg-white rounded-[6px] w-[54px] h-[18px] flex items-center justify-center">
+            <span className="italic font-semibold text-[8px] sm:text-[10px] leading-[12px] text-[#C02929]">{saleLabel}</span>
+          </div>
+        ) : <div className="w-[54px] h-[18px]" />}
         {/* Free shipping badge */}
         <div className="bg-white rounded-[6px] w-[74px] h-[18px] flex items-center justify-center">
           <span className="italic font-semibold text-[8px] sm:text-[10px] leading-[12px] text-black">{shippingLabel}</span>
@@ -60,13 +62,19 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
         <div className="flex flex-col gap-1">
           <span className="font-normal text-[12px] leading-[14px] text-black truncate">{productName}</span>
           <div className="flex items-center gap-2">
-            <span className="font-normal text-[12px] leading-[14px] text-[#C02929]">{salePrice}</span>
-            <span className="font-normal text-[11px] leading-[13px] text-black line-through">{originalPrice}</span>
+            {salePrice ? (
+              <>
+                <span className="font-normal text-[12px] leading-[14px] text-[#C02929]">{salePrice}</span>
+                <span className="font-normal text-[11px] leading-[13px] text-black line-through">{originalPrice}</span>
+              </>
+            ) : (
+              <span className="font-normal text-[12px] leading-[14px] text-black">{originalPrice}</span>
+            )}
           </div>
         </div>
         {/* Decorative ellipses and Add to Basket button (right) */}
         <div className="relative flex flex-row items-end gap-1 min-w-[40px] justify-end">
-        <div className="w-[36px] h-[36px] rounded-full bg-[#CCEBE5] z-0 absolute right-0 bottom-0" />
+          <div className="w-[36px] h-[36px] rounded-full bg-[#CCEBE5] z-0 absolute right-0 bottom-0" />
           <div className="w-[28px] h-[28px] rounded-full bg-[#DDFFF8] z-0 absolute right-1 bottom-1" />
           <button
             className="w-[28px] h-[28px] flex items-center justify-center z-10 focus:outline-none absolute right-1 bottom-1 cursor-pointer rounded-full hover:bg-[#fff] active:bg-[#B2E0DF] scale-105 transition-transform duration-300 ease-in-out"
