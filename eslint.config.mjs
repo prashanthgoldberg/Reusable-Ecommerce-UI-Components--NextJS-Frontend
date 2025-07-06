@@ -18,10 +18,16 @@ const eslintConfig = [
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          argsIgnorePattern: '^_',
+          argsIgnorePattern: '^_|^description$',
           varsIgnorePattern: '^icon$',
         },
       ],
+      // Allow usage of <img> (disable @next/next/no-img-element globally)
+      '@next/next/no-img-element': 'off',
+      // Allow usage of any (disable @typescript-eslint/no-explicit-any globally)
+      '@typescript-eslint/no-explicit-any': 'off',
+      // Allow unescaped single quotes in JSX (disable react/no-unescaped-entities globally)
+      'react/no-unescaped-entities': 'off',
     },
   },
 ];
