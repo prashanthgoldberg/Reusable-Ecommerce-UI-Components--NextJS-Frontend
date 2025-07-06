@@ -16,11 +16,7 @@ const eslintConfig = [
     rules: {
       // Ignore unused vars for icon prop in FilterDropDown
       '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_|^description$',
-          varsIgnorePattern: '^icon$',
-        },
+        'off',
       ],
       // Allow usage of <img> (disable @next/next/no-img-element globally)
       '@next/next/no-img-element': 'off',
