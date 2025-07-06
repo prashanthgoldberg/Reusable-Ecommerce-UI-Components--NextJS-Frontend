@@ -3,6 +3,7 @@
 
 <img width="1000" alt="Screenshot 2025-07-07 at 01 13 39" src="https://github.com/user-attachments/assets/202a9e1b-3fde-4b28-9006-caffe4b204e8" /> <img width="1000" alt="Screenshot 2025-07-07 at 01 14 50" src="https://github.com/user-attachments/assets/af966c07-ad13-4b3c-9a98-aa632dc79bc2" />
 
+---
 
 A robust, production-ready collection of reusable, Figma-accurate UI components for e-commerce and category-driven platforms, built with Next.js, TypeScript, and Tailwind CSS. This project demonstrates how to architect, style, and compose a modern, scalable frontend with pixel-perfect fidelity, accessibility, and real-world interactivity—including a dynamic category filter, product cards, pagination, and more.
 
