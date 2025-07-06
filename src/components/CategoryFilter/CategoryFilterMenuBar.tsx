@@ -3,37 +3,41 @@
 import React, { useState } from "react";
 import { FilterDropDown } from "./FilterDropDown";
 
-// Data for the filter dropdowns
+
+import { products } from "../../data/products";
+
+// Dynamically extract unique filter options from product data
+const getUnique = (arr: string[]) => Array.from(new Set(arr)).filter(Boolean);
 const filterData = [
   {
     title: "brands",
-    options: [
-      "Klint 1",
-      "Klint 2",
-      "Klint 3",
-      "Klint 4",
-      "Klint 5",
-    ],
+    options: getUnique(products.map((p) => p.brand)),
   },
   {
     title: "flavors",
-    options: [
-      "Klint Artic Mint 1",
-      "Klint Artic Mint 2",
-      "Klint Artic Mint 3",
-      "Klint Artic Mint 4",
-      "Klint Artic Mint 5",
-    ],
+    options: getUnique(products.map((p) => p.flavor)),
   },
   {
     title: "strength",
-    options: ["01 dot", "02 dot", "03 dot", "04 dot", "05 dot"],
+    options: getUnique(products.map((p) => p.strength)),
   },
 ];
 
 // The CategoryFilterMenuBar component renders a menu bar with multiple filter dropdowns
-export const CategoryFilterMenuBar: React.FC = () => {
+
+export const CategoryFilterMenuBar: React.FC<{ onFilterChange?: (filters: { brands: string[]; flavors: string[]; strength: string[] }) => void }> = ({ onFilterChange }) => {
   const [selected, setSelected] = useState<string[][]>([[], [], []]);
+
+  // Filter products based on selected filters (for parent usage)
+  React.useEffect(() => {
+    if (onFilterChange) {
+      onFilterChange({
+        brands: selected[0],
+        flavors: selected[1],
+        strength: selected[2],
+      });
+    }
+  }, [selected, onFilterChange]);
 
   // SVG icons extracted from the Figma/SVG for each filter
   // Checklist icon for Brands

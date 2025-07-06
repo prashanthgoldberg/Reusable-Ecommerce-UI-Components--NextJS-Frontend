@@ -56,7 +56,11 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
   const pages = getPages(currentPage, totalPages);
 
   return (
-    <nav className="flex flex-row items-center gap-2 w-full max-w-[372px] h-[32px] select-none my-8 px-1 sm:px-0" aria-label="Pagination">
+    <nav
+      className="flex flex-row items-center gap-2 h-[32px] select-none my-8 px-1 sm:px-0 w-full justify-center"
+      style={{ maxWidth: 372, marginLeft: 'auto', marginRight: 'auto' }}
+      aria-label="Pagination"
+    >
       {/* Prev button */}
       <button
         className={

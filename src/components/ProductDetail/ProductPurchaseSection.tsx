@@ -2,6 +2,7 @@
 import React from "react";
 import type { StockStatus } from "../ProductCard/SingleProductCard";
 import { ProductQuantityDropdownSelect } from "./ProductQuantityDropdownSelect";
+import { ProductQuantityImageSection } from "./ProductQuantityImageSection";
 
 interface ProductPurchaseSectionProps {
   productName: string;
@@ -107,6 +108,11 @@ export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
       </div>
 
       {/* Quantity Item Images */}
+      <ProductQuantityImageSection
+        selected={quantity}
+        onSelect={onQuantityChange}
+      />
+      
       {/* Action Buttons */}
       <div className="flex flex-col gap-2 mt-2 sm:flex-row">
         <button
