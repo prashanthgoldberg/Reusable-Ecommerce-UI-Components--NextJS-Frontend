@@ -3,6 +3,8 @@
 // import Image from "next/image";
 import React from "react";
 
+export type StockStatus = 'in_stock' | 'low_stock' | 'last_3' | 'no_stock';
+
 interface SingleProductCardProps {
   productImage: string;
   productName: string;
@@ -10,6 +12,7 @@ interface SingleProductCardProps {
   originalPrice: string;
   saleLabel?: string;
   shippingLabel: string;
+  stockStatus: StockStatus;
   onAddToBasket?: () => void;
 }
 
@@ -20,6 +23,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
   originalPrice,
   saleLabel,
   shippingLabel,
+  stockStatus,
   onAddToBasket,
 }) => {
   return (

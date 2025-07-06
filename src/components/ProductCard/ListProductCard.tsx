@@ -7,7 +7,18 @@ import { useProductPagination } from "./useProductPagination";
 import { Pagination } from "../Pagination/Pagination";
 
 // Example product data (replace with real data or props as needed)
-const products = [
+import type { StockStatus } from "./SingleProductCard";
+
+export const products: Array<{
+  productImage: string;
+  productName: string;
+  salePrice?: string;
+  originalPrice: string;
+  saleLabel?: string;
+  shippingLabel: string;
+  stockStatus: StockStatus;
+}> = [
+  // Demo: cycle through all stock statuses for variety
   {
     productImage: "/product-image.png",
     productName: "Klint Artic Mint",
@@ -15,6 +26,89 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    originalPrice: "€ 4,99",
+    shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    originalPrice: "€ 4,99",
+    shippingLabel: "Free shipping",
+    stockStatus: "last_3",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
+  },
+
+  // All remaining products: default to in_stock for demo
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    originalPrice: "€ 4,99",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    originalPrice: "€ 4,99",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    originalPrice: "€ 4,99",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -23,6 +117,16 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -31,6 +135,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -39,6 +144,25 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -47,6 +171,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -55,6 +180,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -63,6 +189,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -71,6 +198,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -79,6 +207,16 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -87,6 +225,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -95,6 +234,16 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   {
     productImage: "/product-image.png",
@@ -103,6 +252,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   {
     productImage: "/product-image.png",
@@ -111,6 +261,43 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "last_3",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "last_3",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
+  },
+  {
+    productImage: "/product-image.png",
+    productName: "Klint Artic Mint",
+    salePrice: "€ 3,60",
+    originalPrice: "€ 4,99",
+    saleLabel: "Sale 30%",
+    shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -119,6 +306,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -127,6 +315,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -135,6 +324,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -143,14 +333,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    // salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    // saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
+    stockStatus: "in_stock",
   },
   {
     productImage: "/product-image.png",
@@ -159,150 +342,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    // salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    // saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    // salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    // saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    // salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    // saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    // salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    // saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
-  },
-  {
-    productImage: "/product-image.png",
-    productName: "Klint Artic Mint",
-    salePrice: "€ 3,60",
-    originalPrice: "€ 4,99",
-    saleLabel: "Sale 30%",
-    shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   
   {
@@ -312,6 +352,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -320,6 +361,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -328,6 +370,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -336,6 +379,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -344,6 +388,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -352,6 +397,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -360,6 +406,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "no_stock",
   },
   {
     productImage: "/product-image.png",
@@ -368,6 +415,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -376,6 +424,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -384,6 +433,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -392,6 +442,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -400,6 +451,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -408,6 +460,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -416,6 +469,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -424,6 +478,7 @@ const products = [
     originalPrice: "€ 4,99",
     // saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "low_stock",
   },
   {
     productImage: "/product-image.png",
@@ -432,6 +487,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   {
     productImage: "/product-image.png",
@@ -440,6 +496,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   {
     productImage: "/product-image.png",
@@ -448,6 +505,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   {
     productImage: "/product-image.png",
@@ -456,6 +514,7 @@ const products = [
     originalPrice: "€ 4,99",
     saleLabel: "Sale 30%",
     shippingLabel: "Free shipping",
+    stockStatus: "last_3",
   },
   
   
@@ -477,7 +536,7 @@ export const ListProductCard: React.FC = () => {
           >
             <div
               className="w-full flex justify-center cursor-pointer"
-              onClick={() => router.push("/product-detail")}
+              onClick={() => router.push(`/product-detail?idx=${idx + (page - 1) * 6}`)}
             >
               <SingleProductCard {...product} />
             </div>

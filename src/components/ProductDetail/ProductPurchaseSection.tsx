@@ -1,8 +1,11 @@
+
 import React from "react";
+import type { StockStatus } from "../ProductCard/SingleProductCard";
+import { ProductQuantityDropdownSelect } from "./ProductQuantityDropdownSelect";
 
 interface ProductPurchaseSectionProps {
   productName: string;
-  inStock: boolean;
+  stockStatus: StockStatus;
   salePrice: string;
   originalPrice: string;
   quantity: number;
@@ -13,7 +16,7 @@ interface ProductPurchaseSectionProps {
 
 export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
   productName,
-  inStock,
+  stockStatus,
   salePrice,
   originalPrice,
   quantity,
@@ -23,49 +26,87 @@ export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
 }) => {
   return (
     <div className="w-full max-w-[687px] flex flex-col gap-6 px-2 sm:px-0">
-
-    {/* Product Name */}
-      <div className="flex flex-row items-center justify-between break-words">
-        <span className="font-medium text-[30px] leading-[40px] text-black -tracking-[0.01em]">{productName}</span>
-      </div>
-
-      {/* Stock Status */}
-      <div className="flex flex-row items-center gap-2 flex-wrap">
-        <span className="inline-block w-2 h-2 rounded-full bg-[#15FF00] mr-2" style={{ boxShadow: '0 0 8px 2px #15FF00' }} />
-        <span className="text-[17px] leading-[21px] text-black">{inStock ? 'In stock' : 'Out of stock'}</span>
+      {/* Product Name & Stock Status Centered */}
+      <div className="flex flex-col items-center justify-center w-full text-center">
+        <span className="font-medium text-[30px] leading-[40px] text-black -tracking-[0.01em] break-words">{productName}</span>
+        <div className="flex flex-row items-center gap-2 flex-wrap justify-center mt-2">
+          {(() => {
+            let color = '#15FF00';
+            let shadow = '0 0 8px 2px #15FF00';
+            let label = 'In stock';
+            if (stockStatus === 'low_stock') {
+              color = '#FFD600';
+              shadow = '0 0 8px 2px #FFD600';
+              label = 'Low stock';
+            } else if (stockStatus === 'last_3') {
+              color = '#FFD600';
+              shadow = '0 0 8px 2px #FFD600';
+              label = 'Last 3 cans';
+            } else if (stockStatus === 'no_stock') {
+              color = '#FF3B30';
+              shadow = '0 0 8px 2px #FF3B30';
+              label = 'No stock';
+            }
+            return <>
+              <span className="inline-block w-2 h-2 rounded-full mr-2" style={{ backgroundColor: color, boxShadow: shadow }} />
+              <span className="text-[17px] leading-[21px] text-black">{label}</span>
+            </>;
+          })()}
+        </div>
       </div>
 
       {/* Quantity and Price */}
       <div className="flex flex-row items-center mt-2 flex-wrap justify-between">
-        <select
-          className="border border-[#C4C4C4] rounded-lg px-1 py-2 text-[18px] text-black font-medium focus:outline-none focus:ring-2 focus:ring-[#8EF7FB] focus:border-transparent"
-          value={quantity}
-          onChange={e => onQuantityChange(Number(e.target.value))}
-        >
-          {[1,2,3,4,5,6,7,8,9,10].map(q => (
-            <option key={q} value={q}>{q}x</option>
-          ))}
-        </select>
-        
-        <div className="flex items-center gap-2">
-            {salePrice ? (
-              <>
-              <span className="text-[12px] font-medium text-black">€</span>
-              <span className="font-normal text-[12px] leading-[13px] text-black line-through">{originalPrice}</span>
-              <span className="text-[18px] font-medium text-[#C02929]">€</span>
-                <span className="font-normal text-[18px] leading-[14px] text-[#C02929]">{salePrice}</span>
-              </>
-            ) : (
-                <>
-                  <span className="text-[18px] font-medium text-black">€</span>
-                  <span className="font-normal text-[18px] leading-[14px] text-black">{originalPrice}</span>
-                </>
-            )}
+        <div className="flex flex-row w-full justify-between items-center">
+          {/* Quantity Dropdown Left */}
+          <div className="relative">
+            <ProductQuantityDropdownSelect
+              value={quantity}
+              onChange={onQuantityChange}
+              salePrice={salePrice}
+              originalPrice={originalPrice}
+            />
           </div>
+          {/* Price Area Right (duplicated from dropdown for layout, but hidden in dropdown) */}
+          {(salePrice || originalPrice) && (
+            <div className="flex flex-row items-center gap-2 ml-4">
+              {salePrice ? (
+                <>
+                  <span className="font-normal text-[12px] leading-[13px] text-black line-through">
+                    {/* Multiply originalPrice by quantity */}
+                    {(() => {
+                      const normalized = originalPrice.replace(/[^\d.,]/g, '').replace(',', '.');
+                      const num = parseFloat(normalized);
+                      const currency = originalPrice.replace(/[\d.,\s]/g, '');
+                      return !isNaN(num) ? (num * quantity).toFixed(2) + (currency ? ' ' + currency : '') : originalPrice;
+                    })()}
+                  </span>
+                  <span className="font-normal text-[18px] leading-[14px] text-[#C02929]">
+                    {/* Multiply salePrice by quantity */}
+                    {(() => {
+                      const normalized = salePrice.replace(/[^\d.,]/g, '').replace(',', '.');
+                      const num = parseFloat(normalized);
+                      const currency = salePrice.replace(/[\d.,\s]/g, '');
+                      return !isNaN(num) ? (num * quantity).toFixed(2) + (currency ? ' ' + currency : '') : salePrice;
+                    })()}
+                  </span>
+                </>
+              ) : (
+                <span className="font-normal text-[18px] leading-[14px] text-black">
+                  {(() => {
+                    const normalized = originalPrice.replace(/[^\d.,]/g, '').replace(',', '.');
+                    const num = parseFloat(normalized);
+                    const currency = originalPrice.replace(/[\d.,\s]/g, '');
+                    return !isNaN(num) ? (num * quantity).toFixed(2) + (currency ? ' ' + currency : '') : originalPrice;
+                  })()}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Quantity Item Images */}
-
       {/* Action Buttons */}
       <div className="flex flex-col gap-2 mt-2 sm:flex-row">
         <button
@@ -74,7 +115,6 @@ export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
         >
           Buy now
         </button>
-
         <button
           className="flex-1 border-2 border-[#8EF7FB] bg-white rounded-[3.3px] py-3 text-[19px] font-medium text-black hover:bg-[#e0f7fa] transition transform duration-300 cursor-pointer active:bg-[#8EF7FB]"
           onClick={onAddToCart}
@@ -122,7 +162,6 @@ export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
             <span className="text-[13px] text-[#C9C9C9] leading-tight">Tomorrow</span>
           </div>
         </div>
-
         <div className="flex flex-row items-center pt-2 gap-4">
           {/* Store Icon */}
           <span className="inline-flex items-center justify-center w-7 h-7">
