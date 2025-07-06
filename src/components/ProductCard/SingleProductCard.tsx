@@ -24,7 +24,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
 }) => {
   return (
     <div
-      className="relative w-[160px] h-[240px] sm:w-full sm:max-w-[248px] sm:h-[329px] rounded-[16px] overflow-hidden shadow-sm mx-auto flex-shrink hover:scale-[1.01] transition-transform duration-300 ease-in-out"
+      className="relative w-[160px] h-[240px] sm:w-full sm:max-w-[248px] sm:h-[329px] rounded-[16px] mx-auto overflow-hidden shadow-lg flex-shrink hover:scale-[1.01] transition-transform duration-300 ease-in-out"
       style={{
         background: "linear-gradient(180deg, #CEF6F8 0%, #F0F1F1 100%)",
         minWidth: 0,
@@ -72,6 +72,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
             )}
           </div>
         </div>
+        
         {/* Decorative ellipses and Add to Basket button (right) */}
         <div className="relative flex flex-row items-end gap-1 min-w-[40px] justify-end">
           <div className="w-[36px] h-[36px] rounded-full bg-[#CCEBE5] z-0 absolute right-0 bottom-0" />

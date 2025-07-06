@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { SingleProductCard } from "./SingleProductCard";
 import { useProductPagination } from "./useProductPagination";
 import { Pagination } from "../Pagination/Pagination";
@@ -461,6 +462,7 @@ const products = [
 ];
 
 export const ListProductCard: React.FC = () => {
+  const router = useRouter();
   // 6 cards per page, 2 rows of 3
   const { page, setPage, totalPages, paginated } = useProductPagination(products, 6);
   return (
@@ -474,7 +476,8 @@ export const ListProductCard: React.FC = () => {
             key={idx + (page - 1) * 6}
           >
             <div
-              className="w-full flex justify-center"
+              className="w-full flex justify-center cursor-pointer"
+              onClick={() => router.push("/product-detail")}
             >
               <SingleProductCard {...product} />
             </div>
