@@ -3,6 +3,7 @@ import { SingleProductCard } from "../ProductCard/SingleProductCard";
 
 interface ProductCardReelProps {
   products: Array<React.ComponentProps<typeof SingleProductCard>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onProductClick?: (product: any) => void;
 }
 

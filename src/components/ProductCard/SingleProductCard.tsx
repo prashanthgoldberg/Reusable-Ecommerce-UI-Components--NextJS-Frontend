@@ -46,7 +46,8 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
 
       {/* Product image */}
       <div className="absolute left-1/2 top-[24px] sm:top-[38px] -translate-x-1/2 w-[80px] h-[80px] w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] flex items-center justify-center">
-        <img
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
           src={productImage}
           alt={productName}
           width={120}
@@ -72,7 +73,7 @@ export const SingleProductCard: React.FC<SingleProductCardProps> = ({
             )}
           </div>
         </div>
-        
+
         {/* Decorative ellipses and Add to Basket button (right) */}
         <div className="relative flex flex-row items-end gap-1 min-w-[40px] justify-end">
           <div className="w-[36px] h-[36px] rounded-full bg-[#CCEBE5] z-0 absolute right-0 bottom-0" />

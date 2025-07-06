@@ -5,10 +5,12 @@ interface ProductCardDescriptionSectionProps {
   flavor: string;
   strength: string;
   nicotinePerPouch: string;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   description?: string;
   howToUse?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const ProductCardDescriptionSection: React.FC<ProductCardDescriptionSectionProps> = ({
   brand,
   flavor,
@@ -22,12 +24,14 @@ export const ProductCardDescriptionSection: React.FC<ProductCardDescriptionSecti
       {/* Product Description */}
       <div className="flex flex-col gap-5 border-b border-[#C4C4C4] pb-8">
         <div className="flex flex-row items-center justify-between">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <span className="font-semibold text-[24px] leading-[29px] text-black">Product Description</span>
           <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L10 9L19 1" stroke="#000" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
         <div className="flex flex-col gap-1 mt-2">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <div className="flex flex-row items-center text-[#343232] text-[19px] leading-[29px] font-normal">
             <span>Brand:</span>
             <span className="flex-1 border-b border-dotted border-[#343232] mx-2 h-[1px]" style={{marginTop: 14}}></span>

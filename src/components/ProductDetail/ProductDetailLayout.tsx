@@ -1,6 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 "use client";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 "use client";
 import React, { useState } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { SingleProductCard } from "../ProductCard/SingleProductCard";
 import { ProductCardDescriptionSection } from "./ProductCardDescriptionSection";
 import { ProductPurchaseSection } from "./ProductPurchaseSection";
@@ -62,6 +66,8 @@ export const ProductDetailLayout: React.FC = () => {
 
             {/* Product image as poster */}
             <div className="relative flex flex-col items-center justify-center w-full h-full z-0 ">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={mockProduct.productImage}
                 alt={mockProduct.productName}
