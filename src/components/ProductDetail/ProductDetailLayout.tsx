@@ -85,8 +85,8 @@ const mockReelProducts = Array(5).fill({
         </div>
         {/* Right: Purchase Section with SVG background - fixed on large screens */}
         <div className="flex-1 flex flex-col items-start min-w-full sm:min-w-[350px] max-w-full sm:max-w-[687px] mx-auto px-1 sm:px-0">
-          <div className="relative w-full bg-white overflow-visible lg:sticky lg:top-24">
-            <div className="relative z-10 p-4 sm:p-8">
+          <div className="relative w-full bg-white overflow-visible lg:sticky lg:top-0">
+            <div className="relative z-10 px-4 sm:px-8">
               <ProductPurchaseSection
                 productName={product.productName}
                 stockStatus={product.stockStatus}

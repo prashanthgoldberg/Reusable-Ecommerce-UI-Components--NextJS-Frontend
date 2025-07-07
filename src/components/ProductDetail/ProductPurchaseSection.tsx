@@ -130,7 +130,7 @@ export const ProductPurchaseSection: React.FC<ProductPurchaseSectionProps> = ({
       </div>
 
       {/* Guarantee/Shipping/Returns */}
-      <div className="flex flex-col sm:flex-row justify-between items-center bg-[#8EF7FB]/50 px-4 py-4 mt-2 gap-2">
+      <div className="flex flex-col sm:flex-row justify-between items-center bg-[#8EF7FB]/12 px-4 py-4 mt-2 gap-2">
         <span className="text-[15px] text-[#343232]">30 Day Guarantee</span>
         <span className="text-[15px] text-[#343232]">Free Shipping</span>
         <span className="text-[15px] text-[#343232]">Free Returns</span>
